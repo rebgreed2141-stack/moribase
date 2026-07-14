@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>保育園業務システム</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">こどもの森</p>
+        <h1>保育園業務システム</h1>
+        <p class="subtitle">園内業務を、分かりやすく一つの入口に。</p>
+      </div>
+      <div class="header-badge">提案用プロトタイプ</div>
+    </header>
+
+    <main>
+      <section id="homeView" class="view active" aria-labelledby="homeTitle">
+        <div class="section-heading">
+          <div>
+            <h2 id="homeTitle">メインメニュー</h2>
+            <p>業務の種類を選択してください。</p>
+          </div>
+        </div>
+
+        <div id="mainMenu" class="menu-grid"></div>
+      </section>
+
+      <section id="subView" class="view" aria-labelledby="subTitle">
+        <div class="section-heading sub-heading">
+          <button id="backButton" class="back-button" type="button" aria-label="メインメニューへ戻る">
+            ← 戻る
+          </button>
+          <div>
+            <p id="subNumber" class="section-number"></p>
+            <h2 id="subTitle"></h2>
+            <p id="subDescription"></p>
+          </div>
+        </div>
+
+        <div id="subMenu" class="sub-menu-grid"></div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Version 0.1.0</span>
+      <span>今後、完成済みの各アプリを順次連携します。</span>
+    </footer>
+  </div>
+
+  <div id="notice" class="notice" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
