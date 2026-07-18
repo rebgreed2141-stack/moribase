@@ -3,59 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>保育園業務システム</title>
+  <title>こどもの森保育園業務管理システム</title>
   <link rel="stylesheet" href="style.css" />
-  <meta name="theme-color" content="#1976d2">
+  <meta name="theme-color" content="#4d7f3c">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icon-192.png">
 </head>
 <body>
   <div class="app-shell">
-    <header class="app-header">
-      <div>
-        <p class="eyebrow">こどもの森</p>
-        <h1>保育園業務システム</h1>
-        <p class="subtitle">園内業務を、分かりやすく一つの入口に。</p>
+    <header class="hero-banner">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="system-title">
+          <span>こどもの森保育園</span>
+          <strong>業務管理システム</strong>
+        </div>
+        <div class="today-panel" aria-label="今日の日付">
+          <span id="todayYear" class="today-year"></span>
+          <span id="todayDate" class="today-date"></span>
+          <span id="todayWeek" class="today-week"></span>
+        </div>
       </div>
-      <div class="header-badge">提案用プロトタイプ</div>
     </header>
 
     <main>
-      <section id="homeView" class="view active" aria-labelledby="homeTitle">
-        <div class="section-heading">
-          <div>
-            <h2 id="homeTitle">メインメニュー</h2>
-            <p>業務の種類を選択してください。</p>
+      <section id="homeView" class="view active" aria-label="業務メニュー">
+        <div id="mainMenu" class="menu-grid"></div>
+
+        <div class="status-grid" aria-label="園の状況">
+          <div class="status-card status-green">
+            <span class="status-label">園児数</span>
+            <strong id="childCount">31</strong><span class="status-unit">名</span>
+          </div>
+          <div class="status-card status-blue">
+            <span class="status-label">職員数</span>
+            <strong id="staffCount">－</strong><span class="status-unit">名</span>
+          </div>
+          <div class="status-card status-yellow">
+            <span class="status-label">本日の欠席</span>
+            <strong id="absentCount">－</strong><span class="status-unit">名</span>
+          </div>
+          <div class="status-card status-pink">
+            <span class="status-label">未読の連絡</span>
+            <strong id="unreadCount">－</strong><span class="status-unit">件</span>
           </div>
         </div>
-
-        <div id="mainMenu" class="menu-grid"></div>
       </section>
 
       <section id="subView" class="view" aria-labelledby="subTitle">
-        <div class="section-heading sub-heading">
-          <button id="backButton" class="back-button" type="button" aria-label="メインメニューへ戻る">
-            ← 戻る
-          </button>
+        <div class="sub-heading">
+          <button id="backButton" class="back-button" type="button">← メニューへ戻る</button>
           <div>
             <p id="subNumber" class="section-number"></p>
             <h2 id="subTitle"></h2>
             <p id="subDescription"></p>
           </div>
         </div>
-
         <div id="subMenu" class="sub-menu-grid"></div>
       </section>
     </main>
 
     <footer>
-      <span>Version 0.1.0</span>
-      <span>今後、完成済みの各アプリを順次連携します。</span>
+      <span>Version 0.2.0</span>
+      <span>こどもの森保育園</span>
     </footer>
   </div>
 
   <div id="notice" class="notice" role="status" aria-live="polite"></div>
-
   <script src="app.js"></script>
 </body>
 </html>
