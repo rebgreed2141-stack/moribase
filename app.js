@@ -43,6 +43,17 @@ const menuData = [
   }
 ];
 
+
+const menuIcons = [
+  `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="16" cy="9" r="2.5"/><path d="M3.5 19c0-3.5 2.5-6 5.5-6s5.5 2.5 5.5 6"/><path d="M13 14.2c.9-.8 2-1.2 3.2-1.2 2.6 0 4.8 2.1 4.8 5"/></svg>`,
+  `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7.5" r="3.5"/><path d="M5.5 20c0-4 2.9-7 6.5-7s6.5 3 6.5 7"/></svg>`,
+  `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M8 13l2.5 2.5L16 10"/></svg>`,
+  `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h10a2 2 0 0 1 2 2v14H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/><path d="M8 7h6M8 11h6M8 15h3"/><path d="m15 17 4-4 2 2-4 4-3 1 1-3Z"/></svg>`,
+  `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12h3l1.7-3.2L11 15l2.1-5 1.6 2H21"/><path d="M5 6.5A3.5 3.5 0 0 1 11 4l1 1 1-1a3.5 3.5 0 0 1 5 4.9L12 15l-6-6A3.5 3.5 0 0 1 5 6.5Z"/></svg>`,
+  `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="8"/><path d="M8.5 8.5h7v7h-7z"/></svg>`,
+  `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6V21h-4v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H3v-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3A1.7 1.7 0 0 0 10 3h4a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.1v4H21a1.7 1.7 0 0 0-1.6 1Z"/></svg>`
+];
+
 const mainMenu = document.getElementById("mainMenu");
 const homeView = document.getElementById("homeView");
 const subView = document.getElementById("subView");
@@ -76,7 +87,7 @@ function renderMainMenu() {
     button.className = "menu-card";
     button.innerHTML = `
       <span class="menu-card-top">
-        <span class="menu-card-number">${menu.number}</span>
+        <span class="menu-card-icon menu-icon-${index + 1}">${menuIcons[index]}</span>
         <span class="menu-card-title">${menu.title}</span>
       </span>
       <span class="menu-card-count">${menu.items.length}項目</span>
