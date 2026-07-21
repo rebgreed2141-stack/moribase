@@ -103,9 +103,9 @@ async function fetchJson(path) {
 function dataPathsForToday() {
   const key = dateKey();
   return {
-    kids: `/data/kidslog2/kidslog2_${key}.json`,
-    timecard: `/data/timecard/timecard_${key}.json`,
-    staff: `/data/master/staff_m.json`
+    kids: `/api/moribase/kids-status?date=${encodeURIComponent(key)}`,
+    timecard: `/api/moribase/staff-status?date=${encodeURIComponent(key)}`,
+    staff: `/api/moribase/staff-master`
   };
 }
 
